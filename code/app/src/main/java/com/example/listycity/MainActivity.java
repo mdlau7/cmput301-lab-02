@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     ListView cityList;
     ArrayAdapter<String> cityAdapter;
     ArrayList<String> dataList;
+    Button addCity;
+    Button deleteCity;
+    Button confirm;
+    TextInputEditText textInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +45,24 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
+        textInput = findViewById(R.id.text_input);
+        confirm = findViewById(R.id.confirm_button);
 
+        addCity = findViewById(R.id.add_city);
+        addCity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                textInput.setVisibility(View.VISIBLE);
+                confirm.setVisibility(View.VISIBLE);
+            }
+        });
 
-
-
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_main);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+        deleteCity = findViewById(R.id.delete_city);
+        deleteCity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                textInput.setVisibility(View.VISIBLE);
+                confirm.setVisibility(View.VISIBLE);
+            }
+        });
+        
     }
 }

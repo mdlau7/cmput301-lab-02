@@ -11,10 +11,9 @@
        android:id="@+id/city_list"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-
+       app:layout_constraintBottom_toTopOf="@id/text_input"
        tools:ignore="MissingConstraints"
        tools:layout_editor_absoluteY="45dp"
-
        >
 
    </ListView>
@@ -46,10 +45,11 @@
        android:id="@+id/confirm_button"
        android:layout_width="150dp"
        android:layout_height="wrap_content"
-       android:text="Delete City"
+       android:text="Confirm"
        app:layout_constraintBottom_toBottomOf="@id/main"
        app:layout_constraintLeft_toRightOf="@id/text_input"
        app:layout_constraintRight_toRightOf="@id/main"
+       android:visibility="gone"
        tools:ignore="HardcodedText"
        />
 
@@ -62,7 +62,8 @@
        app:layout_constraintRight_toLeftOf="@id/confirm_button"
        app:layout_constraintDimensionRatio="5:1"
        android:inputType="textWebEditText"
-       android:text="Enter City"
+       android:hint="Enter city name here"
+       android:visibility="gone"
        tools:ignore="HardcodedText"
 
        >
