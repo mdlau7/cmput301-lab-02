@@ -63,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 confirm.setVisibility(View.VISIBLE);
             }
         });
+
+        confirm = findViewById(R.id.confirm_button);
+        confirm.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                confirm.setVisibility(View.GONE);
+                textInput.setVisibility(View.GONE);
+            }
+        });
         
     }
 }
